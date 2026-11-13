@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>포트폴리오 평가 루브릭</title>
+  <meta name="description" content="프로덕트 디자인 포트폴리오를 8개 항목, 4점 척도로 평가하는 기준표 초안(v0.1)입니다.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 바로 가기</a>
+
+  <div class="layout">
+    <nav class="toc" aria-label="목차">
+      <p class="toc-title">평가 항목</p>
+      <ul>
+        <li><a href="#guide">읽는 법</a></li>
+        <li><a href="#overview">항목 한눈에 보기</a></li>
+        <li><a href="#context">프로젝트 맥락과 기여도</a></li>
+        <li><a href="#hierarchy">정보 위계와 스캔 가독성</a></li>
+        <li><a href="#problem">문제 정의</a></li>
+        <li><a href="#research">리서치 설계와 데이터 신뢰도</a></li>
+        <li><a href="#linkage">인사이트에서 UI까지의 연결</a></li>
+        <li><a href="#solution">솔루션 구조와 정보 설계 표기</a></li>
+        <li><a href="#terms">용어와 표기 일관성</a></li>
+        <li><a href="#validation">UT 검증과 서사 완결</a></li>
+        <li><a href="#excluded">평가에서 제외한 것</a></li>
+        <li><a href="#limits">이 초안의 한계</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <header class="hero">
+        <p class="version">v0.1 초안</p>
+        <h1>프로덕트 디자인 포트폴리오 평가 루브릭</h1>
+        <p class="lede">
+          포트폴리오는 발표용 자료가 아니라 면접관이 빠르게 훑어보는 문서입니다.
+          이 기준표는 디자인 의사결정의 근거가 결과물과 직접 이어져 보이는지를 중심으로 8개 항목을 4점 척도로 평가합니다.
+        </p>
+      </header>
+
+      <section id="guide" aria-labelledby="guide-h">
+        <h2 id="guide-h">읽는 법</h2>
+        <dl class="guide">
+          <div>
+            <dt>4점 척도</dt>
+            <dd>항목마다 4점(우수)부터 1점(미흡)까지 각 점수의 상태를 문장으로 정해 두었습니다. 가장 가까운 설명을 고릅니다.</dd>
+          </div>
+          <div>
+            <dt>점수 막대</dt>
+            <dd>점수 옆 막대는 4칸 중 몇 칸이 채워졌는지 보여줍니다. 숫자와 같은 정보입니다.</dd>
+          </div>
+          <div>
+            <dt><span class="est">추정</span> 표시</dt>
+            <dd>멘토링 피드백에 직접 나온 기준이 아니라, 개선 지시의 반대 상태로 역산해 만든 문장입니다. 확정 전에 검토가 필요합니다.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="overview" aria-labelledby="overview-h">
+        <h2 id="overview-h">항목 한눈에 보기</h2>
+        <table class="overview">
+          <thead>
+            <tr>
+              <th scope="col">항목</th>
+              <th scope="col">확인하는 것</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="#context">프로젝트 맥락과 기여도</a></th>
+              <td>프로젝트가 한 줄로 이해되는가, 본인이 한 일이 보이는가</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#hierarchy">정보 위계와 스캔 가독성</a></th>
+              <td>훑어봐도 장표마다 핵심 메시지가 읽히는가</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#problem">문제 정의</a></th>
+              <td>문제가 한 문장으로 명료하고 가설과 구분되는가</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#research">리서치 설계와 데이터 신뢰도</a></th>
+              <td>출처, 표본, 시기가 밝혀져 있고 질문이 중립적인가</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#linkage">인사이트에서 UI까지의 연결</a></th>
+              <td>인사이트, 설계 기준, UI 결정이 한눈에 이어지는가</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#solution">솔루션 구조와 정보 설계 표기</a></th>
+              <td>솔루션 구조화, As-is/To-be 대비, 플로우차트 표기 규칙</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#terms">용어와 표기 일관성</a></th>
+              <td>도메인 용어를 풀어 쓰고 끝까지 같은 기준을 지키는가</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#validation">UT 검증과 서사 완결</a></th>
+              <td>정의한 문제가 해결되었는지 검증하고 이야기를 마무리하는가</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 1. 프로젝트 맥락과 기여도 ===== -->
+      <section id="context" aria-labelledby="context-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="context-h">프로젝트 맥락과 기여도</h3>
+            <p>커버만 봐도 무슨 프로젝트인지 이해되고, 팀 프로젝트라면 본인이 한 일이 드러나는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>프로젝트 맥락과 기여도 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>커버에서 프로젝트가 한 줄로 이해됩니다(약어는 한글 풀이를 함께 적음). 기업 연계 여부, 기간과 인원, 본인 역할, 영역별 기여도, 채택된 본인 제안이 드러납니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>역할과 기간은 있으나 기여도 비율이나 채택 사례가 없습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>프로젝트명만 있고 도메인 설명이 없어서 비전문가는 무엇인지 알 수 없습니다. 역할도 모호합니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>팀 프로젝트인데 본인이 한 일을 확인할 수 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 2. 정보 위계 ===== -->
+      <section id="hierarchy" aria-labelledby="hierarchy-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="hierarchy-h">정보 위계와 스캔 가독성</h3>
+            <p>면접관은 한 장씩 정독하지 않고 빠르게 훑습니다. 훑어도 핵심이 읽히는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>정보 위계와 스캔 가독성 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>장표마다 핵심 메시지가 하나입니다. 핵심 수치와 문장이 가장 크고 부가 설명은 위계가 낮습니다. 긴 정성 데이터는 구조화하거나 시각화했습니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>위계는 있으나 일부 장표에 3줄 이상의 텍스트가 뭉쳐 있습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>핵심과 부가 정보가 같은 크기로 놓여 있고, 한 장표에 설문, 인터뷰, 데스크 리서치가 함께 들어 있습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>텍스트 나열이라 훑어서는 메시지를 파악할 수 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 3. 문제 정의 ===== -->
+      <section id="problem" aria-labelledby="problem-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="problem-h">문제 정의</h3>
+            <p>무엇이 문제인지 한 문장으로 말할 수 있는지, 가설과 섞이지 않았는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>문제 정의 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>대상, 상황, 결과가 담긴 한 문장으로 명료합니다. 가설과 위계가 분리되어 있고 장표 제목과 내용이 일치합니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>문제는 명확하나 문장이 장황하거나 가설이 섞여 있습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>가설을 문제 정의로 표기했거나, 장표 제목과 내용이 맞지 않습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>문제 정의 없이 솔루션부터 시작합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 4. 리서치 ===== -->
+      <section id="research" aria-labelledby="research-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="research-h">리서치 설계와 데이터 신뢰도</h3>
+            <p>수치가 어디서 왔는지, 질문이 결론을 유도하지 않는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>리서치 설계와 데이터 신뢰도 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>출처, 표본, 시기가 밝혀져 있습니다. 기업이 제공한 데이터라면 그 사실과 분석 과정이 함께 보입니다. 설문 문항이 중립적이고 그래프에 기간이 표기되어 있습니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>출처는 있으나 표본이나 시기가 일부 빠져 있습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>출처 없이 "50% 이상의 사용자가"처럼 수치만 제시합니다. 또는 솔루션을 전제로 한 유도 질문을 썼습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>근거 없이 추측으로 문제를 서술합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 5. 연결 ===== -->
+      <section id="linkage" aria-labelledby="linkage-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="linkage-h">인사이트에서 UI까지의 연결</h3>
+            <p>리서치에서 나온 인사이트가 설계 기준이 되고, 그 기준이 화면에 반영된 흐름이 한눈에 보이는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>인사이트에서 UI까지의 연결 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>인사이트, 설계 기준, UI 결정이 한 장면에서 이어져 보입니다. 해상도 같은 설계 결정에도 데이터 근거가 장표에 적혀 있습니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>연결은 있으나 글로만 설명되어 시각적으로 이어지지 않습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>리서치 장표와 UI 장표가 따로 놓여 있습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>UI 결정의 근거가 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 6. 솔루션 구조 ===== -->
+      <section id="solution" aria-labelledby="solution-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="solution-h">솔루션 구조와 정보 설계 표기</h3>
+            <p>솔루션이 구조적으로 정리되어 있고, 플로우차트와 IA가 표준 규칙을 따르는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>솔루션 구조와 정보 설계 표기 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>솔루션에 번호를 붙여 구조화했습니다. As-is와 To-be가 타이포와 레이아웃으로 뚜렷하게 대비됩니다. 플로우차트는 표준 표기(시작·종료는 원, 화면은 사각형, 데이터 입력은 평행사변형, 조건 분기는 마름모)와 단색 팔레트를 지킵니다. IA는 핵심 위주로 압축했습니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>대부분 지키나 일부 표기나 색이 섞여 있습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>As-is와 To-be의 구분이 약합니다(타이포 크기 차이가 없음). 비표준 도형을 쓰거나 색이 과합니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>플로우를 이해할 수 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 7. 용어 ===== -->
+      <section id="terms" aria-labelledby="terms-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="terms-h">용어와 표기 일관성</h3>
+            <p>도메인을 모르는 면접관도 읽을 수 있는지, 같은 기준이 끝까지 유지되는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>용어와 표기 일관성 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>처음 등장할 때 한글 풀이와 약어를 함께 적고 전체에서 같은 기준을 유지합니다. 세부 정책표는 UI 이해에 필요한 최소한만 남겼습니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>병기는 있으나 중간에 기준이 깨집니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>약어를 단독으로 쓰거나 세부 정책표를 그대로 넣었습니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>같은 개념을 서로 다른 용어로 써서 혼란을 줍니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- ===== 8. UT ===== -->
+      <section id="validation" aria-labelledby="validation-h">
+        <article class="criterion">
+          <header class="criterion-head">
+            <h3 id="validation-h">UT 검증과 서사 완결</h3>
+            <p>UT가 "정의한 문제가 해결되었는가"를 확인하도록 설계되었는지, 문제에서 검증까지 이야기가 마무리되는지 봅니다.</p>
+          </header>
+          <table class="rows">
+            <caption>UT 검증과 서사 완결 점수별 상태</caption>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="score">4<small>점</small></span><span class="meter" style="--n:4" aria-hidden="true"></span></th>
+                <td>UT 목적이 "정의한 문제가 해결되었는가"에 맞춰져 있습니다. 결과를 먼저 보여주고 핵심 수치를 가장 크게 씁니다. 확인된 데이터만 서술하며 일부 실패도 기록합니다. 회고가 결과와 논리적으로 맞고, 문제, 정의, 솔루션, UT가 하나의 이야기로 완결됩니다.<span class="est">추정</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">3<small>점</small></span><span class="meter" style="--n:3" aria-hidden="true"></span></th>
+                <td>UT와 결과는 있으나 수치 강조가 약하거나 회고의 논리가 일부 어긋납니다.</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">2<small>점</small></span><span class="meter" style="--n:2" aria-hidden="true"></span></th>
+                <td>사용성 점검에 그칩니다. "~일 것 같다" 같은 추측 표현이 있거나, 그래프만 있고 핵심 수치가 불분명합니다. 회고가 결과와 모순됩니다(예: 문제를 더 깊이 발견했다는 내용을 UT 결과로 서술).</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="score">1<small>점</small></span><span class="meter" style="--n:1" aria-hidden="true"></span></th>
+                <td>검증 과정이 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section id="excluded" aria-labelledby="excluded-h">
+        <h2 id="excluded-h">평가에서 제외한 것</h2>
+        <ul class="notes">
+          <li>
+            <strong>이력서와 경력기술서</strong>
+            <span>포트폴리오와 문서 종류가 달라 점수 항목이 아닌 별도 체크리스트로 둡니다. 확인 항목은 기간, 업무, 역할, 성과의 분리 여부, 정량 성과, 지원 공고(JD)에 맞춘 구성입니다.</span>
+          </li>
+          <li>
+            <strong>멘토링 중 질문에 대한 답변 태도</strong>
+            <span>포트폴리오 파일만으로는 평가할 수 없습니다.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="limits" aria-labelledby="limits-h">
+        <h2 id="limits-h">이 초안의 한계</h2>
+        <div class="callout">
+          <p>멘토링 피드백 2건을 바탕으로 만든 초안이라 아래 내용은 아직 확정되지 않았습니다.</p>
+        </div>
+        <ul class="notes" style="margin-top:12px">
+          <li>
+            <strong>가중치와 총점은 정하지 않았습니다.</strong>
+            <span>피드백에 점수나 상, 중, 하 판단이 없어서 항목별 중요도를 데이터로 정할 수 없었습니다.</span>
+          </li>
+          <li>
+            <strong>4점 기준은 역산한 문장입니다.</strong>
+            <span>피드백은 부족한 점 위주여서 "잘한 상태"에 대한 직접 근거가 적습니다. <span class="est">추정</span> 표시를 확인해 주세요.</span>
+          </li>
+          <li>
+            <strong>UI 시각 완성도 항목이 없습니다.</strong>
+            <span>레이아웃과 타이포그래피 기본기에 대한 구체 기준이 피드백에 없어서 항목으로 만들지 못했습니다.</span>
+          </li>
+          <li>
+            <strong>기업 연계 프로젝트 중심입니다.</strong>
+            <span>개인 프로젝트나 리서치 방법론이 약한 포트폴리오에는 기준이 비어 있을 수 있습니다.</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>프로덕트 디자인 포트폴리오 평가 루브릭 v0.1 초안. 이 점수는 루브릭 충족도이며 채용 합격을 예측하는 값이 아닙니다.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
